@@ -1,0 +1,74 @@
+:root {
+  /* Palette */
+  --cream: #faf5ea;
+  --cream-deep: #f1e9d6;
+  --card: #fffdf7;
+  --sage: #7f9b75;
+  --sage-deep: #5e7a58;
+  --clay: #c8825f;
+  --sky: #9db8c4;
+  --ink: #3c3a33;
+  --muted: #847f72;
+  --border: #e7ddc8;
+
+  --shadow-sm: 0 6px 18px rgba(94, 122, 88, 0.08);
+  --shadow-md: 0 16px 40px rgba(94, 122, 88, 0.14);
+  --radius: 1.5rem;
+
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Nunito Sans", system-ui, sans-serif;
+}
+
+/* ---------- Base ---------- */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: var(--sans);
+  background-image:
+    radial-gradient(
+      ellipse at 15% 0%,
+      rgba(157, 184, 196, 0.18),
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 100% 100%,
+      rgba(127, 155, 117, 0.16),
+      transparent 50%
+    );
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+p {
+  line-height: 1.7;
+}
+a {
+  color: var(--sage-deep);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--clay);
+}
+
+.text-sage {
+  color: var(--sage-deep) !important;
+}
+.text-muted-warm {
+  color: var(--muted) !important;
+}
