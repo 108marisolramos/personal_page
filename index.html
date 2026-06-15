@@ -31,5 +31,89 @@
   </head>
 
   <body>
+    <!------------------ HEADER / NAV ------------------>
+    <header>
+      <nav
+        class="navbar navbar-expand-lg sticky-top"
+        aria-label="Main navigation"
+      >
+        <div class="container">
+          <a class="navbar-brand" href="#top">Marisol Ramos</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNav"
+            aria-controls="mainNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+              <li class="nav-item">
+                <a class="nav-link" href="#experience">Experience</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#education">Education</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#skills">Skills</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#languages">Languages</a>
+              </li>
+              <li class="nav-item ms-lg-2">
+                <a class="btn btn-leaf btn-sm" href="form.html">Contact me</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!------------------ MAIN ------------------>
+    <main id="top">
+      <!-- HERO -->
+      <section class="hero py-5" aria-label="Introduction">
+        <div class="container py-4">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-7 order-2 order-lg-1 text-center text-lg-start">
+              <p class="eyebrow mb-3">Software Engineer</p>
+              <h1 class="display-3 mb-3">
+                Hi, I'm <span class="text-sage">Marisol</span>
+              </h1>
+              <p class="hero__lead mx-auto mx-lg-0">
+                I'm passionate about developing and optimizing software systems,
+                taking advantage of my programming skills. I value direct
+                communication with clients to really understand their needs and
+                deliver effective solutions. I enjoy tackling technical
+                challenges, improving processes, and being part of a team that
+                fosters creativity and innovation — always looking for ways to
+                grow by learning new skills.
+              </p>
+              <div
+                class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start mt-4"
+              >
+                <a href="form.html" class="btn btn-leaf">Get in touch</a>
+                <a href="#experience" class="btn btn-soft">View experience</a>
+              </div>
+            </div>
+            <div class="col-lg-5 order-1 order-lg-2 text-center">
+              <span class="hero__photo-wrap">
+                <img
+                  src="images/ProfilePic.JPG"
+                  alt="Portrait of Marisol Ramos Correa"
+                  class="hero__photo"
+                  width="300"
+                  height="300"
+                />
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
