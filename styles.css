@@ -163,3 +163,97 @@ a {
   color: var(--muted);
   font-size: 1.08rem;
 }
+
+/* ---------- Section headings ---------- */
+.section-title {
+  margin-bottom: 1.9rem;
+}
+.section-title h2 {
+  font-size: 1.85rem;
+  margin: 0.2rem 0 0;
+}
+.section-title .mark {
+  display: inline-block;
+  width: 34px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--clay);
+  margin-bottom: 0.4rem;
+}
+
+/* ---------- Cards (experience + education) ---------- */
+.soft-card,
+.info-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.soft-card {
+  overflow: hidden;
+}
+.info-card {
+  padding: 1.6rem;
+}
+.soft-card:hover,
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+/* experience card */
+.exp-card__body {
+  padding: 1.5rem;
+}
+.exp-card__role {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+.exp-card__company {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--sage-deep);
+}
+.exp-card__date {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--clay);
+  background: rgba(200, 130, 95, 0.1);
+  border-radius: 999px;
+  padding: 0.2rem 0.75rem;
+  margin: 0.55rem 0 0.85rem;
+}
+.exp-card__desc {
+  color: var(--muted);
+  font-size: 0.96rem;
+  margin-bottom: 0;
+}
+
+/* education card */
+.info-card .dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--sage);
+  margin-bottom: 0.8rem;
+}
+.info-card h3 {
+  font-size: 1.05rem;
+}
+.info-card .meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ---------- Section tint ---------- */
+.tint {
+  background: rgba(255, 253, 247, 0.6);
+}
