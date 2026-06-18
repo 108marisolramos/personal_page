@@ -323,6 +323,30 @@ a {
   color: rgba(255, 255, 255, 0.7);
 }
 
+/* ---------- Forms ---------- */
+.form-control,
+.form-select {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--ink);
+  border-radius: 0.85rem;
+  padding: 0.6rem 0.9rem;
+}
+.form-control::placeholder {
+  color: #b6ae9c;
+}
+.form-control:focus,
+.form-select:focus {
+  background: var(--card);
+  border-color: var(--sage);
+  box-shadow: 0 0 0 0.2rem rgba(127, 155, 117, 0.18);
+}
+.form-label {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--ink);
+}
+
 /* ---------- Section tint ---------- */
 .tint {
   background: rgba(255, 253, 247, 0.6);

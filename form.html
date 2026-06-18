@@ -3,7 +3,271 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta
+      name="description"
+      content="Contact Marisol Ramos Correa — send a message about projects, collaboration or opportunities."
+    />
+    <title>Contact — Marisol Ramos Correa</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400&family=Nunito+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body></body>
+
+  <body>
+    <!------------------ HEADER / NAV ------------------>
+    <header>
+      <nav
+        class="navbar navbar-expand-lg sticky-top"
+        aria-label="Main navigation"
+      >
+        <div class="container">
+          <a class="navbar-brand" href="index.html">Marisol Ramos</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNav"
+            aria-controls="mainNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#experience">Experience</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#education">Education</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#skills">Skills</a>
+              </li>
+              <li class="nav-item ms-lg-2">
+                <a class="btn btn-leaf btn-sm" href="index.html">← Back home</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!------------------ MAIN ------------------>
+    <main>
+      <section class="py-5" aria-labelledby="contact-title">
+        <div class="container py-3">
+          <div class="row justify-content-center">
+            <div class="col-lg-7 col-xl-6">
+              <header class="text-center mb-4">
+                <p class="eyebrow mb-2">Get in touch</p>
+                <h1 id="contact-title" class="display-5">
+                  Send me a <span class="text-sage">message</span>
+                </h1>
+                <p class="text-muted-warm">
+                  Fill out the form and I'll get back to you as soon as I can.
+                </p>
+              </header>
+
+              <div class="soft-card">
+                <div class="exp-card__body" id="contact-form-app"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!------------------ FOOTER ------------------>
+    <footer class="site-footer py-4">
+      <div class="container text-center">
+        <address class="mb-2">
+          <a href="mailto:marisolramosc@icloud.com">marisolramosc@icloud.com</a>
+          &nbsp;·&nbsp;
+          <a href="tel:+525517986566">+52 55 1798 6566</a>
+        </address>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- React (via CDN — no build step needed) -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone@7.26.4/babel.min.js"></script>
+
+    <!-- React component: form -->
+    <script type="text/babel">
+      const { useState, useRef } = React;
+
+      function ContactForm() {
+        const empty = { name: "", email: "", subject: "", message: "" };
+        const [values, setValues] = useState(empty);
+        const [validated, setValidated] = useState(false);
+        const [sent, setSent] = useState(false);
+        const formRef = useRef(null);
+
+        const handleChange = (e) => {
+          setValues({ ...values, [e.target.name]: e.target.value });
+          setSent(false);
+        };
+
+        const handleSubmit = (e) => {
+          e.preventDefault();
+          // Validate
+          if (!formRef.current.checkValidity()) {
+            setValidated(true);
+            return;
+          }
+          // Open email app (mailto)
+          const to = "marisolramosc@icloud.com";
+          const subject = encodeURIComponent("[Portfolio] " + values.subject);
+          const body = encodeURIComponent(
+            values.message + "\n\n— " + values.name + " (" + values.email + ")",
+          );
+          window.location.href =
+            "mailto:" + to + "?subject=" + subject + "&body=" + body;
+          setSent(true);
+          setValidated(false);
+        };
+
+        return (
+          <React.Fragment>
+            {sent && (
+              <div className="alert alert-success" role="alert">
+                🌿 Opening your email app… If nothing happens, write me at{" "}
+                <a href="mailto:marisolramosc@icloud.com">
+                  marisolramosc@icloud.com
+                </a>
+                .
+              </div>
+            )}
+
+            <form
+              ref={formRef}
+              className={
+                "needs-validation" + (validated ? " was-validated" : "")
+              }
+              noValidate
+              onSubmit={handleSubmit}
+            >
+              <div className="mb-3">
+                <label htmlFor="name" className="form-label">
+                  Full name
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="name"
+                  name="name"
+                  placeholder="Your name"
+                  value={values.name}
+                  onChange={handleChange}
+                  required
+                />
+                <div className="invalid-feedback">Please enter your name.</div>
+              </div>
+
+              <div className="mb-3">
+                <label htmlFor="email" className="form-label">
+                  Email address
+                </label>
+                <input
+                  type="email"
+                  className="form-control"
+                  id="email"
+                  name="email"
+                  placeholder="you@example.com"
+                  value={values.email}
+                  onChange={handleChange}
+                  required
+                />
+                <div className="invalid-feedback">
+                  Please enter a valid email address.
+                </div>
+              </div>
+
+              <div className="mb-3">
+                <label htmlFor="subject" className="form-label">
+                  Subject
+                </label>
+                <select
+                  className="form-select"
+                  id="subject"
+                  name="subject"
+                  value={values.subject}
+                  onChange={handleChange}
+                  required
+                >
+                  <option value="" disabled>
+                    Choose a topic…
+                  </option>
+                  <option>Job opportunity</option>
+                  <option>Just saying hi</option>
+                  <option>Other</option>
+                </select>
+                <div className="invalid-feedback">Please select a subject.</div>
+              </div>
+
+              <div className="mb-4">
+                <label htmlFor="message" className="form-label">
+                  Message
+                </label>
+                <textarea
+                  className="form-control"
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="Tell me about your idea…"
+                  value={values.message}
+                  onChange={handleChange}
+                  required
+                ></textarea>
+                <div className="invalid-feedback">
+                  Please write a short message.
+                </div>
+              </div>
+
+              <div className="d-grid">
+                <button type="submit" className="btn btn-leaf">
+                  Send message
+                </button>
+              </div>
+            </form>
+          </React.Fragment>
+        );
+      }
+
+      ReactDOM.createRoot(document.getElementById("contact-form-app")).render(
+        <ContactForm />,
+      );
+    </script>
+  </body>
 </html>
