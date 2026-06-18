@@ -18,4 +18,4 @@ python3 -m http.server 8000
 
 ## Live site
 
-https://108marisolramos.github.io/personal-page/
+https://108marisolramos.github.io/personal_page/
